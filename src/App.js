@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import CreateForm from './components/form/form';
+import CreateForm from './components/form/form2';
 
 
 function App() {

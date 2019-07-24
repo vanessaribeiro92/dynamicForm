@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Label from "../label/index";
+//import Label from "../label/index";
 
 class Checkbox extends Component {
   constructor() {

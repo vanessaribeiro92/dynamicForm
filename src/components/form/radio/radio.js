@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Label from "../label/index";
+//import Label from "../label/index";
 
 class RadioButton extends Component {
   constructor() {
@@ -22,7 +22,7 @@ class RadioButton extends Component {
         >
           {/* {props.children} */}
         </input>
-        <Label id={this.props.id}/>
+        {/* <Label id={this.props.id}/> */}
       </React.Fragment>
     );
   }

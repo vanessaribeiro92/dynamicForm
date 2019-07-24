@@ -1,5 +1,6 @@
 import React from 'react'
 import SwitchInput from '../form/switch/switch';
+//import ReactDOM from 'react-dom'
 // import Checkbox from './checkbox/checkbox'
 // import Input from './input/input'
 // import Label from './label/label'
@@ -26,7 +27,7 @@ function CreateForm() {
   return (
     <div className="CreateForm">
 
-      {verifyType(json)}
+      
       {parseJson(json)}
 
     </div>
@@ -34,23 +35,27 @@ function CreateForm() {
 
 }
 
+// componentWillMount() {
+//{verifyType(json)}
+
+// }
 
 function parseJson(json) {
 
-
-  // createInput(){
-  //   this.setState({
-  //     input: true
-  //   })
-  // }
-  
-  
+  var arrayDeInputs = [];
+  for(var i=0;i<json.length;i++){
+    arrayDeInputs.push(
+      verifyType(json[i].type)
+    )
+    console.log(i)
+  }
   
   //aqui vou criar quantos inputs vão aparecer
   //regras
 
   return (
-    [<SwitchInput></SwitchInput>]
+    <div>{arrayDeInputs}</div>
+    //[<SwitchInput></SwitchInput>]
   )
 }
 
@@ -105,3 +110,30 @@ export default CreateForm;
 //     </header>
 //   </div>
 // );
+
+
+//____________________
+
+  // var obj = JSON.parse(json);
+
+  // for(var i = 0; i<= obj.length; i++){
+  //   React.createElement(
+  //     obj[i].type, 
+  //     []
+      
+  //   )
+  // }
+
+  // const createElement = React.createElement
+  
+  // ReactDOM.render(
+  //   createElement('div',json),
+  //   document.getElementsByName('root')
+  // )
+
+
+  // createInput(){
+  //   this.setState({
+  //     input: true
+  //   })
+  // }

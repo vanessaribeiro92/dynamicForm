@@ -5,7 +5,7 @@ import Switch from "react-switch";
 class SwitchInput extends Component {
   constructor() {
     super();
-    this.state = { checked: false };
+    this.state = { checked: false }; 
     this.handleChange = this.handleChange.bind(this);
   }
 
