@@ -54,7 +54,18 @@ function parseJson(json) {
     // console.log(i)
     
   }
+  
+
+  // var arrayDeNames = [];
+  // for(var j=0; j<json.length; j++){
+  //   arrayDeNames.push(
+  //   verify(json[j].name, j)
+  // )
+  // }
+
   return (
+
+    // <div>{arrayDeNames}</div>
     <div>{arrayDeInputs}</div>
   )
 }
