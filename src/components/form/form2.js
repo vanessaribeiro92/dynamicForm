@@ -11,6 +11,7 @@ function CreateForm() {
   let json = [{
     name: 'name',
     type: 'text',
+    
   }, {
     name: 'age',
     type: 'number',
@@ -49,28 +50,38 @@ function parseJson(json) {
   var arrayDeInputs = [];
   for(var i=0;i<json.length;i++){
     arrayDeInputs.push(
-      verifyType(json[i].type, i)
+      verifyType(json[i].name,json[i].type, i)
     )
     // console.log(i)
     
   }
   
 
-  // var arrayDeNames = [];
-  // for(var j=0; j<json.length; j++){
-  //   arrayDeNames.push(
-  //   verify(json[j].name, j)
-  // )
-  // }
+  var arrayDeNames = [];
+  for(var j=0; j<json.length; j++){
+    arrayDeNames.push(
+    verifyName(json[j].name, j)
+  )
+  }
 
   return (
-
-    // <div>{arrayDeNames}</div>
+  <React.Fragment>
+    
     <div>{arrayDeInputs}</div>
+    </React.Fragment>
   )
 }
 
-function verifyType(type, index){
+function verifyName(name, index){
+
+  return (
+    <div key={index}>
+      {name}
+    </div>
+  )
+}
+
+function verifyType(name, type, index){
 
   //criar label
 
@@ -78,6 +89,7 @@ function verifyType(type, index){
   return (
 
     <div key={index}>
+      <div>{name}</div>
       {type === 'text' ?
         ( <Input></Input> )
         :
