@@ -1,18 +1,17 @@
 import React from 'react'
 import SwitchInput from '../form/switch/switch';
-//import ReactDOM from 'react-dom'
-// import Checkbox from './checkbox/checkbox'
-// import Input from './input/input'
-// import Label from './label/label'
-// import Radio from './radio/radio'
-// import SelectInput from './select/select'
-// import SwitchInput from './switch/switch'
+import Input from '../form/input/input'
+import RadioButton from '../form/radio/radio'
+//import Switch from "react-switch";
+import PropTypes from 'prop-types'
+//import Checkbox from '../form/checkbox/checkbox'
 
 function CreateForm() {
 
   let json = [{
     name: 'name',
     type: 'text',
+    
   }, {
     name: 'age',
     type: 'number',
@@ -22,61 +21,78 @@ function CreateForm() {
   }, {
     name: 'agree_terms',
     type: 'checkbox',
-  }]
+  }, {
+    name: 'kinship',
+    type: 'radio',
+  }, {
+    value: true,
+    name: 'biometry',
+    type:  'switch',
+  }
+]
 
   return (
     <div className="CreateForm">
 
       
       {parseJson(json)}
+      
 
     </div>
   )
 
 }
 
-// componentWillMount() {
 //{verifyType(json)}
-
-// }
 
 function parseJson(json) {
 
   var arrayDeInputs = [];
   for(var i=0;i<json.length;i++){
     arrayDeInputs.push(
-      verifyType(json[i].type)
+      verifyType(json[i].name,json[i].type, i)
     )
-    console.log(i)
+    // console.log(i)
+    
   }
   
-  //aqui vou criar quantos inputs vão aparecer
-  //regras
 
   return (
+    <React.Fragment>
     <div>{arrayDeInputs}</div>
-    //[<SwitchInput></SwitchInput>]
+    </React.Fragment>
   )
 }
 
-function verifyType(json){
+
+function verifyType(name, type, index){
+
+  //criar label
+
  //são as condicionais que verifica o tipo de input e retorna
   return (
 
-    <div>
-      {json[0]['type'] === 'text' ?
-        ( <SwitchInput></SwitchInput> )
+    <div key={index}>
+      <div>{name}</div>
+      {type === 'text' ?
+        ( <Input></Input> )
         :
-        json[1]['type'] === 'number' ?
-        ( <input></input> )
+        type === 'number' ?
+        ( <Input></Input> )
         : 
-        json[2]['type'] === 'email' ?
-        ( <div></div> )
+        type === 'email' ?
+        ( <Input></Input> )
         :
-        json[3]['type'] === 'checkbox' ?
-        ( <div></div> )
+        type === 'checkbox' ?
+        ( <div>checkbox</div> )
         :
-        (<radio></radio>)
+        type === 'radio' ?
+        ( <RadioButton></RadioButton> )
+        :
+        type === 'switch' ?
+        ( <SwitchInput checked={PropTypes}></SwitchInput> )
+        :
+        (<div>default</div>)
       }
     </div>
 

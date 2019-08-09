@@ -57,29 +57,13 @@ function parseJson(json) {
   }
   
 
-  var arrayDeNames = [];
-  for(var j=0; j<json.length; j++){
-    arrayDeNames.push(
-    verifyName(json[j].name, j)
-  )
-  }
-
   return (
-  <React.Fragment>
-    
+    <React.Fragment>
     <div>{arrayDeInputs}</div>
     </React.Fragment>
   )
 }
 
-function verifyName(name, index){
-
-  return (
-    <div key={index}>
-      {name}
-    </div>
-  )
-}
 
 function verifyType(name, type, index){
 
@@ -117,6 +101,8 @@ function verifyType(name, type, index){
 
 }
 
+export default CreateForm;
+
 //<Switch checked={true} onChange={console.log} ></Switch>
 
 // function add(a, b){
@@ -128,4 +114,3 @@ function verifyType(name, type, index){
 //  add( 2, {3:3})
 
  
-export default CreateForm;
