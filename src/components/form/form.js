@@ -1,49 +1,75 @@
 import React from 'react'
+import axios from 'axios'
 import SwitchInput from '../form/switch/switch';
 import Input from '../form/input/input'
 import RadioButton from '../form/radio/radio'
 //import Switch from "react-switch";
 import PropTypes from 'prop-types'
 //import Checkbox from '../form/checkbox/checkbox'
+import api from '../../services/api'
 
-function CreateForm() {
 
-  let json = [{
-    name: 'name',
-    type: 'text',
+
+// axios.get('http://192.168.1.10/resident.json')
+//   .then(function(response){
+//     console.log(response.data)
+//   })
+//   .catch(function(error){
+//     console.warn(error);
+//   })
+
+
+
+
+// function CreateForm() {
+
+
+
+//   let json = [{
+//     name: 'name',
+//     type: 'text',
     
-  }, {
-    name: 'age',
-    type: 'number',
-  }, {
-    name: 'email',
-    type: 'email',
-  }, {
-    name: 'agree_terms',
-    type: 'checkbox',
-  }, {
-    name: 'kinship',
-    type: 'radio',
-  }, {
-    value: true,
-    name: 'biometry',
-    type:  'switch',
-  }
-]
+//   }, {
+//     name: 'age',
+//     type: 'number',
+//   }, {
+//     name: 'email',
+//     type: 'email',
+//   }, {
+//     name: 'agree_terms',
+//     type: 'checkbox',
+//   }, {
+//     name: 'kinship',
+//     type: 'radio',
+//   }, {
+//     value: true,
+//     name: 'biometry',
+//     type:  'switch',
+//   }
+// ]
 
-  return (
-    <div className="CreateForm">
+//   return (
+//     <div className="CreateForm">
 
       
-      {parseJson(json)}
+//       {parseJson(json)}
       
 
-    </div>
-  )
+//     </div>
+//   )
+
+// }
+
+//{verifyType(json)}
+
+
+export default class CreateForm extends Component{
+state = {
+  
+}
 
 }
 
-//{verifyType(json)}
 
 function parseJson(json) {
 
